@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+    # pushpin-stream:
+    #     build: ./pushpin
+    #     volumes:
+    #         - ./pushpin:/src
+    #         ports:
+    #         - "7999:7999"
+    trackergg-client:
+        build: ./trackergg_client/
+        volumes:
+        - ./trackergg-client:/src
+        ports:
+        - "8000:8000"
