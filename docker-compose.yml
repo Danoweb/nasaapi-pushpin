@@ -1,14 +1,18 @@
-version: "3.8"
+version: "3"
 services:
     # pushpin-stream:
+    #     env_file: 
+    #       - creds.env
     #     build: ./pushpin
     #     volumes:
     #         - ./pushpin:/src
-    #         ports:
+    #     ports:
     #         - "7999:7999"
-    trackergg-client:
-        build: ./trackergg_client/
-        volumes:
-        - ./trackergg-client:/src
+    nasaapi-client:
+        env_file: 
+            - creds.env
+        build: ./nasaapi_client/
         ports:
-        - "8000:8000"
+            - "5000:5000"
+        volumes:
+            - "./nasaapi_client:/src"
