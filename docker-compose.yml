@@ -1,13 +1,18 @@
 version: "3"
 services:
-    # pushpin-stream:
-    #     env_file: 
-    #       - creds.env
-    #     build: ./pushpin
-    #     volumes:
-    #         - ./pushpin:/src
-    #     ports:
-    #         - "7999:7999"
+    pushpin-stream:
+        env_file: 
+          - creds.env
+        build: ./pushpin
+        volumes:
+            - ./pushpin:/src
+            #- ./pushpin/config:/etc/pushpin
+        ports:
+            - "7999:7999"
+            - "5560:5560"
+            - "5561:5561"
+            - "5562:5562"
+            - "5563:5563"
     nasaapi-client:
         env_file: 
             - creds.env

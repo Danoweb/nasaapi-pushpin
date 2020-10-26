@@ -11,7 +11,7 @@ def index():
     return resp
 
 @app.route('/stats')
-def player_stats():
+def nasa_stats():
     data = {}
     end_date = datetime.today().strftime('%Y-%m-%d')
     start_date = datetime.now() - timedelta(days=-7)
@@ -34,6 +34,14 @@ def player_stats():
     resp = Response(json.dumps(data))
     resp.headers['Content-Type'] = 'application/json'
     return resp 
+
+@app.route('/stream')
+def nasa_stream():
+    resp = Response('')
+    resp.headers['Grip-Hold'] = 'stream'
+    resp.headers['Grip-Channel'] = 'nasa'
+    resp.headers['Content-Type'] = 'text/plain'
+    return resp
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
