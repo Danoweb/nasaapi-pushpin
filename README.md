@@ -17,7 +17,10 @@ A simple python app which makes requests to the NASA API. https://api.nasa.gov/
 
 * `/` - health check /heartbeat, responds if container is online and reachable.
 * `/stats` - gives the last 5 days of Near Earth Orbit Object data from NASA.
+* `/stream` - the pushpin stream (In progress)
 
 ## Pushpin Container
 A pushpin implementation which streams results of the trackerGG api to any streams connected.
 
+### Config
+* The `pushpin/config` folder contains a routes file that is provided to the pushpin app when the container starts.  Add routes here. (default: Anything on Localhost goes to 5000 on nasaapi_client container)
